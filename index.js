@@ -25,7 +25,7 @@ app.use((req, _, next) => {
 
 app.use(errorHandler);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Server is running on http://0.0.0.0:${port}`);
