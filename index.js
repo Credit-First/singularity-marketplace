@@ -25,20 +25,8 @@ app.use((req, _, next) => {
 
 app.use(errorHandler);
 
-const port = process.env.NODE_ENV === 'production' ? process.env.PORT || 80 : 3333;
+const port = process.env.PORT;
 
-// if (process.env.NODE_ENV === 'production') {
-//   const options = {
-//     // key: fs.readFileSync('/etc/letsencrypt/live/bots.okgunbot.com/privkey.pem'),
-//     // cert: fs.readFileSync('/etc/letsencrypt/live/bots.okgunbot.com/cert.pem'),
-//     maxHeaderSize: 160000000,
-//   };
-
-//   const server = http.createServer(options, app);
-//   server.listen(port, () => {
-//     console.log(`Server is running on https://0.0.0.0:${port}`);
-//   });
-// } else {
 app.listen(port, () => {
   console.log(`Server is running on http://0.0.0.0:${port}`);
 });
